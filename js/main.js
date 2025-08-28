@@ -213,29 +213,102 @@ class AgentCeroDemo {
     }
     
     setupIntersectionObserver() {
-        // Animate elements when they come into view
+        // Premium scroll animations - Framer style
         const observerOptions = {
-            threshold: 0.1,
-            rootMargin: '0px 0px -50px 0px'
+            threshold: 0.15,
+            rootMargin: '0px 0px -100px 0px'
         };
         
         const observer = new IntersectionObserver((entries) => {
-            entries.forEach(entry => {
+            entries.forEach((entry, index) => {
                 if (entry.isIntersecting) {
-                    entry.target.classList.add('fade-in-up');
-                    
-                    // Animate counters
-                    if (entry.target.classList.contains('stat-number')) {
-                        this.animateCounter(entry.target);
-                    }
+                    // Add staggered animation delays
+                    setTimeout(() => {
+                        entry.target.classList.add('revealed');
+                        
+                        // Animate counters
+                        if (entry.target.classList.contains('stat-number')) {
+                            this.animateCounter(entry.target);
+                        }
+                        
+                        // Add shimmer effect to premium elements
+                        if (entry.target.classList.contains('service-card') || 
+                            entry.target.classList.contains('pricing-card')) {
+                            entry.target.classList.add('shimmer');
+                            setTimeout(() => {
+                                entry.target.classList.remove('shimmer');
+                            }, 2000);
+                        }
+                    }, index * 100);
                 }
             });
         }, observerOptions);
         
-        // Observe elements
-        document.querySelectorAll('.service-card, .process-step, .pricing-card, .stat-number').forEach(el => {
+        // Observe elements with different animation classes
+        document.querySelectorAll('.service-card').forEach((el, index) => {
+            el.classList.add('scroll-reveal');
+            if (index % 2 === 0) {
+                el.classList.add('scroll-reveal-left');
+            } else {
+                el.classList.add('scroll-reveal-right');
+            }
             observer.observe(el);
         });
+        
+        document.querySelectorAll('.process-step').forEach(el => {
+            el.classList.add('scroll-reveal-scale');
+            observer.observe(el);
+        });
+        
+        document.querySelectorAll('.pricing-card').forEach((el, index) => {
+            el.classList.add('scroll-reveal');
+            observer.observe(el);
+        });
+        
+        document.querySelectorAll('.testimonial-card').forEach((el, index) => {
+            el.classList.add('scroll-reveal');
+            if (index % 2 === 0) {
+                el.classList.add('scroll-reveal-left');
+            } else {
+                el.classList.add('scroll-reveal-right');
+            }
+            observer.observe(el);
+        });
+        
+        document.querySelectorAll('.stat-number').forEach(el => {
+            el.classList.add('scroll-reveal-scale');
+            observer.observe(el);
+        });
+        
+        // Setup parallax effects
+        this.setupParallax();
+    }
+    
+    setupParallax() {
+        // Framer-style parallax scrolling
+        let ticking = false;
+        
+        const updateParallax = () => {
+            const scrolled = window.pageYOffset;
+            const parallaxElements = document.querySelectorAll('.parallax-element');
+            
+            parallaxElements.forEach((element, index) => {
+                const speed = 0.5 + (index * 0.1);
+                const yPos = -(scrolled * speed);
+                element.style.transform = `translateY(${yPos}px)`;
+            });
+            
+            ticking = false;
+        };
+        
+        const requestParallaxUpdate = () => {
+            if (!ticking) {
+                requestAnimationFrame(updateParallax);
+                ticking = true;
+            }
+        };
+        
+        window.addEventListener('scroll', requestParallaxUpdate);
     }
     
     animateCounter(element) {
