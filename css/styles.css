@@ -164,11 +164,25 @@ p {
 }
 
 .section {
-  padding: var(--spacing-4xl) 0;
+  padding: 120px 0 100px 0;
 }
 
 .section-sm {
-  padding: var(--spacing-3xl) 0;
+  padding: 80px 0 60px 0;
+}
+
+/* Better section spacing */
+.hero {
+  padding: 140px 0 120px 0;
+  margin-bottom: 0;
+}
+
+.services, .process-section, .pricing-section, .testimonials-section, .faq-section {
+  padding: 100px 0;
+}
+
+.credibility {
+  padding: 60px 0;
 }
 
 /* Premium Header - Rosedale Style */
@@ -309,11 +323,11 @@ p {
 .hero {
   background: var(--gradient-hero);
   color: var(--color-white);
-  padding: 140px 0 var(--spacing-4xl);
+  padding: 160px 0 120px 0;
   margin-top: 0;
   position: relative;
   overflow: hidden;
-  min-height: 100vh;
+  min-height: 90vh;
   display: flex;
   align-items: center;
 }
@@ -368,17 +382,23 @@ p {
 }
 
 .hero-content {
-  max-width: 600px;
+  max-width: 1000px;
   position: relative;
+  text-align: center;
+  margin: 0 auto;
 }
 
 .hero-title {
-  font-size: clamp(2.5rem, 5vw, 4rem);
-  margin-bottom: var(--spacing-xl);
+  font-size: clamp(3rem, 6vw, 5rem);
+  margin-bottom: 24px;
   line-height: 1.1;
-  font-weight: 800;
+  font-weight: 700;
   letter-spacing: -0.02em;
   animation: slideInUp 1s var(--ease-premium) 0.2s both;
+  text-align: center;
+  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-title .highlight {
@@ -402,11 +422,14 @@ p {
 }
 
 .hero-subtitle {
-  font-size: var(--font-size-xl);
-  margin-bottom: var(--spacing-xl);
-  color: rgba(255, 255, 255, 0.9);
-  line-height: 1.4;
+  font-size: 1.25rem;
+  margin-bottom: 40px;
+  color: rgba(255, 255, 255, 0.8);
+  line-height: 1.5;
   animation: slideInUp 1s var(--ease-premium) 0.4s both;
+  max-width: 700px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero-buttons {
@@ -657,12 +680,13 @@ p {
 
 .section-subtitle {
   text-align: center;
-  font-size: var(--font-size-lg);
+  font-size: 1.25rem;
   color: rgba(255, 255, 255, 0.7);
-  margin-bottom: var(--spacing-2xl);
-  max-width: 600px;
+  margin-bottom: 80px;
+  max-width: 700px;
   margin-left: auto;
   margin-right: auto;
+  line-height: 1.6;
 }
 
 .service-features {
@@ -688,27 +712,35 @@ p {
 
 .section-title {
   text-align: center;
-  margin-bottom: var(--spacing-3xl);
+  margin-bottom: 60px;
   color: var(--color-white);
   font-weight: 700;
+  font-size: 3.5rem;
+  line-height: 1.1;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .services-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-  gap: var(--spacing-xl);
-  margin-top: var(--spacing-3xl);
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  margin-top: 0;
 }
 
 .service-card {
   background: rgba(255, 255, 255, 0.03);
-  padding: var(--spacing-2xl);
+  padding: 40px 32px;
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.4s var(--ease-premium);
   text-align: left;
   position: relative;
   overflow: hidden;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .service-card::before {
@@ -734,22 +766,26 @@ p {
 }
 
 .service-icon {
-  font-size: 2rem;
-  margin-bottom: var(--spacing-md);
+  font-size: 2.5rem;
+  margin-bottom: 24px;
   display: block;
   color: var(--color-accent);
 }
 
 .service-card h3 {
   color: var(--color-white);
-  margin-bottom: var(--spacing-md);
-  font-size: var(--font-size-xl);
+  margin-bottom: 16px;
+  font-size: 1.5rem;
+  font-weight: 600;
+  line-height: 1.3;
 }
 
 .service-card p {
   color: rgba(255, 255, 255, 0.7);
-  margin-bottom: var(--spacing-md);
+  margin-bottom: 24px;
   line-height: 1.6;
+  font-size: 1rem;
+  flex-grow: 1;
 }
 
 /* About Section */
@@ -1267,19 +1303,23 @@ p {
 
 .process-timeline {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-  gap: var(--spacing-2xl);
-  margin-top: var(--spacing-3xl);
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 40px;
+  margin-top: 0;
 }
 
 .process-step {
   background: rgba(255, 255, 255, 0.03);
-  padding: var(--spacing-2xl);
+  padding: 40px 32px;
   border-radius: 16px;
   border: 1px solid rgba(255, 255, 255, 0.1);
   text-align: center;
   position: relative;
   transition: all 0.4s var(--ease-premium);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
 }
 
 .process-step:hover {
@@ -1330,19 +1370,25 @@ p {
 
 .pricing-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-  gap: var(--spacing-2xl);
-  margin-top: var(--spacing-3xl);
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  gap: 40px;
+  margin-top: 0;
+  max-width: 1200px;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .pricing-card {
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid rgba(255, 255, 255, 0.1);
   border-radius: 16px;
-  padding: var(--spacing-2xl);
+  padding: 40px 32px;
   text-align: center;
   position: relative;
   transition: all 0.4s var(--ease-premium);
+  height: 100%;
+  display: flex;
+  flex-direction: column;
 }
 
 .pricing-card:hover {
