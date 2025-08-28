@@ -120,8 +120,8 @@ body {
   font-family: var(--font-family-primary);
   font-size: var(--font-size-base);
   line-height: 1.6;
-  color: var(--color-gray-800);
-  background-color: var(--color-white);
+  color: var(--color-white);
+  background: var(--color-dark);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
@@ -542,8 +542,8 @@ p {
 
 /* Credibility Section */
 .credibility {
-  background: var(--color-white);
-  border-bottom: 1px solid var(--color-gray-100);
+  background: var(--color-dark);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .credibility-grid {
@@ -637,10 +637,7 @@ p {
 
 /* Premium Services Section */
 .services {
-  background: linear-gradient(135deg, 
-    rgba(229, 212, 237, 0.1) 0%, 
-    rgba(255, 255, 255, 0.05) 50%, 
-    rgba(109, 114, 195, 0.1) 100%);
+  background: var(--color-dark);
   position: relative;
   overflow: hidden;
 }
@@ -661,7 +658,7 @@ p {
 .section-subtitle {
   text-align: center;
   font-size: var(--font-size-lg);
-  color: var(--color-gray-600);
+  color: rgba(255, 255, 255, 0.7);
   margin-bottom: var(--spacing-2xl);
   max-width: 600px;
   margin-left: auto;
@@ -692,7 +689,8 @@ p {
 .section-title {
   text-align: center;
   margin-bottom: var(--spacing-3xl);
-  color: var(--color-gray-800);
+  color: var(--color-white);
+  font-weight: 700;
 }
 
 .services-grid {
@@ -703,15 +701,12 @@ p {
 }
 
 .service-card {
-  background: var(--gradient-card);
+  background: rgba(255, 255, 255, 0.03);
   padding: var(--spacing-2xl);
-  border-radius: 24px;
-  box-shadow: var(--shadow-premium-md);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   transition: all 0.4s var(--ease-premium);
-  text-align: center;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  text-align: left;
   position: relative;
   overflow: hidden;
 }
@@ -733,25 +728,28 @@ p {
 }
 
 .service-card:hover {
-  transform: translateY(-12px) scale(1.02);
-  box-shadow: var(--shadow-premium-xl);
-  border-color: rgba(255, 255, 255, 0.4);
+  transform: translateY(-4px);
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .service-icon {
-  font-size: 3rem;
-  margin-bottom: var(--spacing-lg);
+  font-size: 2rem;
+  margin-bottom: var(--spacing-md);
   display: block;
+  color: var(--color-accent);
 }
 
 .service-card h3 {
-  color: var(--color-gray-800);
+  color: var(--color-white);
   margin-bottom: var(--spacing-md);
+  font-size: var(--font-size-xl);
 }
 
 .service-card p {
-  color: var(--color-gray-600);
-  margin-bottom: 0;
+  color: rgba(255, 255, 255, 0.7);
+  margin-bottom: var(--spacing-md);
+  line-height: 1.6;
 }
 
 /* About Section */
@@ -1073,7 +1071,7 @@ p {
 
 /* Demo Section */
 .demo-section {
-  background: var(--color-white);
+  background: var(--color-dark);
   padding: var(--spacing-4xl) 0;
 }
 
@@ -1263,7 +1261,7 @@ p {
 
 /* Process Section */
 .process-section {
-  background: var(--color-gray-50);
+  background: var(--color-dark);
   padding: var(--spacing-4xl) 0;
 }
 
@@ -1275,18 +1273,19 @@ p {
 }
 
 .process-step {
-  background: var(--color-white);
+  background: rgba(255, 255, 255, 0.03);
   padding: var(--spacing-2xl);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-md);
+  border-radius: 16px;
+  border: 1px solid rgba(255, 255, 255, 0.1);
   text-align: center;
   position: relative;
-  transition: var(--transition-normal);
+  transition: all 0.4s var(--ease-premium);
 }
 
 .process-step:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-xl);
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .step-number {
@@ -1305,11 +1304,11 @@ p {
 
 .step-content h3 {
   margin-bottom: var(--spacing-md);
-  color: var(--color-gray-800);
+  color: var(--color-white);
 }
 
 .step-content p {
-  color: var(--color-gray-600);
+  color: rgba(255, 255, 255, 0.7);
   margin-bottom: var(--spacing-lg);
 }
 
@@ -1325,7 +1324,7 @@ p {
 
 /* Pricing Section */
 .pricing-section {
-  background: var(--color-white);
+  background: var(--color-dark);
   padding: var(--spacing-4xl) 0;
 }
 
@@ -1337,25 +1336,24 @@ p {
 }
 
 .pricing-card {
-  background: var(--color-white);
-  border: 2px solid var(--color-gray-200);
-  border-radius: var(--radius-xl);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
   padding: var(--spacing-2xl);
   text-align: center;
   position: relative;
-  transition: var(--transition-normal);
+  transition: all 0.4s var(--ease-premium);
 }
 
 .pricing-card:hover {
-  border-color: var(--color-primary);
+  border-color: rgba(255, 255, 255, 0.2);
   transform: translateY(-4px);
-  box-shadow: var(--shadow-xl);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .pricing-card.featured {
-  border-color: var(--color-primary);
-  transform: scale(1.05);
-  box-shadow: var(--shadow-xl);
+  border-color: var(--color-accent);
+  background: rgba(109, 114, 195, 0.05);
 }
 
 .plan-badge {
@@ -1379,7 +1377,7 @@ p {
 .plan-header h3 {
   font-size: var(--font-size-2xl);
   margin-bottom: var(--spacing-lg);
-  color: var(--color-gray-800);
+  color: var(--color-white);
 }
 
 .plan-price {
@@ -1391,24 +1389,24 @@ p {
 
 .currency {
   font-size: var(--font-size-lg);
-  color: var(--color-gray-600);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .amount {
   font-size: var(--font-size-4xl);
   font-weight: 700;
-  color: var(--color-primary);
+  color: var(--color-white);
 }
 
 .period {
   font-size: var(--font-size-lg);
-  color: var(--color-gray-600);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 .custom {
   font-size: var(--font-size-xl);
   font-weight: 600;
-  color: var(--color-primary);
+  color: var(--color-white);
 }
 
 .plan-features {
@@ -1432,7 +1430,7 @@ p {
 
 .features-list li {
   padding: var(--spacing-sm) 0;
-  color: var(--color-gray-600);
+  color: rgba(255, 255, 255, 0.7);
   position: relative;
   padding-left: var(--spacing-lg);
 }
@@ -1470,7 +1468,7 @@ p {
 
 /* Testimonials Section */
 .testimonials-section {
-  background: var(--color-gray-50);
+  background: var(--color-dark);
   padding: var(--spacing-4xl) 0;
 }
 
@@ -1482,17 +1480,18 @@ p {
 }
 
 .testimonial-card {
-  background: var(--color-white);
-  border-radius: var(--radius-xl);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 16px;
   padding: var(--spacing-2xl);
-  box-shadow: var(--shadow-md);
-  transition: var(--transition-normal);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  transition: all 0.4s var(--ease-premium);
   position: relative;
 }
 
 .testimonial-card:hover {
   transform: translateY(-4px);
-  box-shadow: var(--shadow-xl);
+  border-color: rgba(255, 255, 255, 0.2);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .testimonial-content {
@@ -1501,8 +1500,8 @@ p {
 
 .quote-icon {
   font-size: 4rem;
-  color: var(--color-primary);
-  opacity: 0.2;
+  color: var(--color-accent);
+  opacity: 0.3;
   line-height: 1;
   margin-bottom: var(--spacing-md);
 }
@@ -1510,7 +1509,7 @@ p {
 .testimonial-content p {
   font-size: var(--font-size-lg);
   line-height: 1.6;
-  color: var(--color-gray-700);
+  color: rgba(255, 255, 255, 0.9);
   font-style: italic;
   margin-bottom: 0;
 }
@@ -1615,7 +1614,7 @@ p {
 
 /* FAQ Section */
 .faq-section {
-  background: var(--color-white);
+  background: var(--color-dark);
   padding: var(--spacing-4xl) 0;
 }
 
@@ -1625,8 +1624,11 @@ p {
 }
 
 .faq-item {
-  border-bottom: 1px solid var(--color-gray-200);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 12px;
   margin-bottom: var(--spacing-md);
+  background: rgba(255, 255, 255, 0.02);
+  overflow: hidden;
 }
 
 .faq-question {
@@ -1635,18 +1637,18 @@ p {
   align-items: center;
   padding: var(--spacing-lg);
   cursor: pointer;
-  transition: var(--transition-fast);
+  transition: all 0.3s var(--ease-premium);
 }
 
 .faq-question:hover {
-  background: var(--color-gray-50);
+  background: rgba(255, 255, 255, 0.05);
 }
 
 .faq-question h3 {
   margin: 0;
   font-size: var(--font-size-lg);
   font-weight: 600;
-  color: var(--color-gray-800);
+  color: var(--color-white);
 }
 
 .faq-toggle {
@@ -1674,7 +1676,7 @@ p {
 
 .faq-answer p {
   padding: 0 var(--spacing-lg) var(--spacing-lg);
-  color: var(--color-gray-600);
+  color: rgba(255, 255, 255, 0.7);
   line-height: 1.6;
   margin-bottom: 0;
 }
