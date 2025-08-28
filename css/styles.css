@@ -25,7 +25,7 @@
   --color-gray-700: #404040;
   --color-gray-800: #262626;
   --color-gray-900: #171717;
-  --color-dark: #514f59;           /* Custom dark from palette */
+  --color-dark: #0a0a0a;           /* Negro azulado como fondo principal */
   
   /* Premium Gradients - Rosedale Style */
   --gradient-primary: linear-gradient(135deg, var(--color-primary) 0%, var(--color-accent) 100%);
@@ -208,7 +208,7 @@ p {
   top: 10px;
   width: calc(100% - 60px);
   box-shadow: var(--shadow-premium-xl);
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(10, 10, 10, 0.9);
   transform: translateX(-50%) scale(0.98);
 }
 
@@ -1123,7 +1123,7 @@ p {
 
 .demo-controls h3 {
   margin-bottom: var(--spacing-lg);
-  color: var(--color-gray-800);
+  color: var(--color-white);
 }
 
 .scenario-buttons {
@@ -1134,13 +1134,14 @@ p {
 
 .scenario-btn {
   padding: var(--spacing-md);
-  border: 2px solid var(--color-gray-200);
-  background: var(--color-white);
-  border-radius: var(--radius-lg);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  background: rgba(255, 255, 255, 0.03);
+  border-radius: 12px;
   cursor: pointer;
-  transition: var(--transition-fast);
+  transition: all 0.3s ease;
   font-weight: 500;
   text-align: left;
+  color: var(--color-white);
 }
 
 .scenario-btn.active,
@@ -1151,10 +1152,9 @@ p {
 }
 
 .demo-chat {
-  background: var(--color-white);
-  border: 1px solid var(--color-gray-200);
-  border-radius: var(--radius-xl);
-  box-shadow: var(--shadow-lg);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
   overflow: hidden;
   height: 500px;
   display: flex;
@@ -1193,7 +1193,7 @@ p {
   flex: 1;
   padding: var(--spacing-lg);
   overflow-y: auto;
-  background: var(--color-gray-50);
+  background: rgba(0, 0, 0, 0.2);
 }
 
 .chat-message {
@@ -1219,11 +1219,12 @@ p {
 }
 
 .message-content {
-  background: var(--color-white);
+  background: rgba(255, 255, 255, 0.1);
   padding: var(--spacing-md);
-  border-radius: var(--radius-lg);
+  border-radius: 12px;
   max-width: 70%;
-  box-shadow: var(--shadow-sm);
+  color: var(--color-white);
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
 .chat-message.user .message-content {
@@ -1233,8 +1234,8 @@ p {
 
 .chat-input-container {
   padding: var(--spacing-md);
-  background: var(--color-white);
-  border-top: 1px solid var(--color-gray-200);
+  background: rgba(255, 255, 255, 0.05);
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
   display: flex;
   gap: var(--spacing-md);
 }
@@ -1368,6 +1369,12 @@ p {
   padding: var(--spacing-4xl) 0;
 }
 
+.pricing-single {
+  display: flex;
+  justify-content: center;
+  margin-top: 0;
+}
+
 .pricing-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
@@ -1386,9 +1393,10 @@ p {
   text-align: center;
   position: relative;
   transition: all 0.4s var(--ease-premium);
-  height: 100%;
   display: flex;
   flex-direction: column;
+  max-width: 500px;
+  width: 100%;
 }
 
 .pricing-card:hover {
@@ -1455,6 +1463,13 @@ p {
   color: var(--color-white);
 }
 
+.post-implementation {
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.6);
+  margin-top: 12px;
+  margin-bottom: 0;
+}
+
 .plan-features {
   margin-bottom: var(--spacing-2xl);
   text-align: left;
@@ -1492,24 +1507,44 @@ p {
 .plan-btn {
   width: 100%;
   margin-top: var(--spacing-lg);
+  background: var(--gradient-primary);
+  color: var(--color-white);
+  box-shadow: var(--shadow-premium-md);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  padding: 16px 32px;
+  border-radius: 12px;
+  font-weight: 600;
+  text-decoration: none;
+  display: inline-block;
+  text-align: center;
+  transition: all 0.3s var(--ease-premium);
+  backdrop-filter: blur(10px);
+  -webkit-backdrop-filter: blur(10px);
+}
+
+.plan-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--shadow-premium-lg), var(--shadow-glow);
+  text-decoration: none;
 }
 
 .roi-calculator {
   text-align: center;
   margin-top: var(--spacing-4xl);
   padding: var(--spacing-2xl);
-  background: var(--color-gray-50);
-  border-radius: var(--radius-xl);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 16px;
 }
 
 .roi-calculator h3 {
   margin-bottom: var(--spacing-md);
-  color: var(--color-gray-800);
+  color: var(--color-white);
 }
 
 .roi-calculator p {
   margin-bottom: var(--spacing-lg);
-  color: var(--color-gray-600);
+  color: rgba(255, 255, 255, 0.7);
 }
 
 /* Testimonials Section */
@@ -1854,9 +1889,15 @@ p {
   }
 }
 
-@keyframes shimmer {
-  0% { background-position: -200% 0; }
-  100% { background-position: 200% 0; }
+@keyframes slideInUp {
+  from { 
+    opacity: 0; 
+    transform: translateY(30px); 
+  }
+  to { 
+    opacity: 1; 
+    transform: translateY(0); 
+  }
 }
 
 .fade-in-up {
@@ -1924,11 +1965,11 @@ p {
   transform: scale(1);
 }
 
-/* Shimmer effect for premium elements */
-.shimmer {
-  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.4), transparent);
-  background-size: 200% 100%;
-  animation: shimmer 2s infinite;
+/* Slide-in effect for pricing cards */
+.pricing-slide-in {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: slideInUp 0.8s var(--ease-premium) forwards;
 }
 
 /* Floating elements */
