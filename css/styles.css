@@ -206,10 +206,10 @@ p {
 
 .header.scrolled {
   top: 10px;
-  width: calc(100% - 160px);
+  width: 75%;
   box-shadow: none;
   background: transparent;
-  transform: translateX(-50%) scale(0.98);
+  transform: translateX(-50%) scale(0.95);
 }
 
 /* Removed header::before - no longer needed */
