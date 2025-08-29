@@ -534,17 +534,45 @@ class AgentCeroDemo {
 class HeaderEffects {
     constructor() {
         this.header = document.querySelector('.header');
+        this.navLinks = document.querySelectorAll('.nav-link');
+        this.sections = document.querySelectorAll('section[id]');
         this.init();
     }
-    
+
     init() {
         if (!this.header) return;
         
         window.addEventListener('scroll', () => {
-            if (window.scrollY > 100) {
-                this.header.classList.add('scrolled');
-            } else {
-                this.header.classList.remove('scrolled');
+            this.handleHeaderScroll();
+            this.handleScrollSpy();
+        });
+    }
+
+    handleHeaderScroll() {
+        if (window.scrollY > 100) {
+            this.header.classList.add('scrolled');
+        } else {
+            this.header.classList.remove('scrolled');
+        }
+    }
+
+    handleScrollSpy() {
+        const scrollPosition = window.scrollY + 200; // Offset for header height
+        
+        this.sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+            
+            if (scrollPosition >= sectionTop && scrollPosition < sectionTop + sectionHeight) {
+                // Remove active class from all links
+                this.navLinks.forEach(link => link.classList.remove('active'));
+                
+                // Add active class to current section link
+                const activeLink = document.querySelector(`a[href="#${sectionId}"]`);
+                if (activeLink) {
+                    activeLink.classList.add('active');
+                }
             }
         });
     }

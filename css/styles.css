@@ -206,7 +206,7 @@ p {
 
 .header.scrolled {
   top: 10px;
-  width: 75%;
+  width: 60%;
   box-shadow: none;
   background: transparent;
   transform: translateX(-50%) scale(0.95);
