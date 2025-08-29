@@ -10,8 +10,8 @@
   --color-primary-dark: #4a3691;   /* Darker purple */
   --color-primary-light: #6d72c3;  /* Light blue-purple */
   --color-secondary: #e5d4ed;      /* Soft lavender */
-  --color-accent: #6d72c3;         /* Blue accent */
-  --color-accent-light: #8b8fd9;   /* Lighter blue accent */
+  --color-accent: #B6F500;         /* Lime green accent - vibrant and modern */
+  --color-accent-light: #d4ff4d;   /* Lighter lime accent */
   
   /* Neutrals - Sophisticated grays */
   --color-white: #FFFFFF;
@@ -206,9 +206,9 @@ p {
 
 .header.scrolled {
   top: 10px;
-  width: calc(100% - 60px);
+  width: calc(100% - 160px);
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.4);
-  background: rgba(255, 255, 255, 0.08);
+  background: transparent;
   transform: translateX(-50%) scale(0.98);
 }
 
