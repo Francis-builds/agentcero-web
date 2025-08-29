@@ -231,34 +231,41 @@ p {
   z-index: 2;
 }
 
-.nav-container {
+.nav-unified {
   display: flex;
-  justify-content: space-between;
   align-items: center;
-  max-width: none;
-  margin: 0;
-  padding: 0;
+  justify-content: space-between;
+  padding: 12px 20px;
+  background: rgba(0, 0, 0, 0.6);
+  border-radius: 20px;
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  width: 100%;
+  gap: 24px;
 }
 
 .nav-logo h1 {
-  font-size: var(--font-size-xl);
+  font-size: var(--font-size-lg);
   color: var(--color-white);
   margin-bottom: 0;
   font-weight: 700;
-  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+  white-space: nowrap;
 }
 
 .nav-menu {
   display: flex;
   list-style: none;
   gap: 8px;
-  background: rgba(0, 0, 0, 0.6);
-  padding: 8px;
-  border-radius: 16px;
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
-  border: 1px solid rgba(255, 255, 255, 0.15);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+  background: transparent;
+  padding: 0;
+  border-radius: 0;
+  backdrop-filter: none;
+  -webkit-backdrop-filter: none;
+  border: none;
+  box-shadow: none;
 }
 
 .nav-item {
@@ -305,7 +312,8 @@ p {
 }
 
 .nav-cta {
-  margin-left: 16px;
+  margin-left: 0;
+  white-space: nowrap;
 }
 
 /* Mobile Navigation */
