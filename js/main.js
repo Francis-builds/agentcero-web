@@ -575,12 +575,15 @@ const additionalCSS = `
 }
 
 .modal-content {
-    background: white;
-    border-radius: 12px;
+    background: rgba(10, 10, 10, 0.95);
+    border: 1px solid #5941a9;
+    border-radius: 16px;
     max-width: 500px;
     width: 90%;
     max-height: 80vh;
     overflow-y: auto;
+    backdrop-filter: blur(20px);
+    -webkit-backdrop-filter: blur(20px);
 }
 
 .modal-header {
@@ -588,7 +591,12 @@ const additionalCSS = `
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem;
-    border-bottom: 1px solid #e9ecef;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.modal-header h3 {
+    color: white;
+    margin: 0;
 }
 
 .modal-close {
@@ -596,11 +604,17 @@ const additionalCSS = `
     border: none;
     font-size: 1.5rem;
     cursor: pointer;
-    color: #6c757d;
+    color: rgba(255, 255, 255, 0.7);
+    transition: color 0.3s ease;
+}
+
+.modal-close:hover {
+    color: white;
 }
 
 .modal-body {
     padding: 1.5rem;
+    color: white;
 }
 
 .roi-form .form-group {
@@ -611,20 +625,31 @@ const additionalCSS = `
     display: block;
     margin-bottom: 0.5rem;
     font-weight: 500;
+    color: rgba(255, 255, 255, 0.9);
 }
 
 .roi-form input {
     width: 100%;
     padding: 0.75rem;
-    border: 1px solid #ced4da;
-    border-radius: 6px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    color: white;
+    font-size: 1rem;
+}
+
+.roi-form input:focus {
+    outline: none;
+    border-color: #5941a9;
+    background: rgba(255, 255, 255, 0.1);
 }
 
 .roi-results {
     margin-top: 2rem;
     padding: 1.5rem;
-    background: #f8f9fa;
-    border-radius: 8px;
+    background: rgba(255, 255, 255, 0.05);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 12px;
 }
 
 .result-item {
