@@ -191,8 +191,8 @@ p {
   top: 20px;
   left: 50%;
   transform: translateX(-50%);
-  width: calc(100% - 40px);
-  max-width: 1200px;
+  width: calc(100% - 80px);
+  max-width: 1400px;
   background: transparent;
   backdrop-filter: none;
   -webkit-backdrop-filter: none;
